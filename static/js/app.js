@@ -27,6 +27,14 @@ for(var i = 0; i < options.length; i++) {
     el.value = opt;
     select.appendChild(el);
   }
+  // appending the entire ufo sighting dataset to the table
+  data.forEach((sightingEvent) => {
+    var row = tbody.append("tr");
+    Object.entries(sightingEvent).forEach(([key, value]) => {
+    var cell = row.append("td");
+    cell.text(value);      
+    });
+  }); 
 
 // creating an array to hold countries for filtering
 countryList = [];
